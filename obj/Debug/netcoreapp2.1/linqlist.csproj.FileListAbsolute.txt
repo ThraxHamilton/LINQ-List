@@ -1,0 +1,11 @@
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/bin/Debug/netcoreapp2.1/linqlist.deps.json
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/bin/Debug/netcoreapp2.1/linqlist.runtimeconfig.json
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/bin/Debug/netcoreapp2.1/linqlist.runtimeconfig.dev.json
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/bin/Debug/netcoreapp2.1/linqlist.dll
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/bin/Debug/netcoreapp2.1/linqlist.pdb
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.csprojAssemblyReference.cache
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.csproj.CoreCompileInputs.cache
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.AssemblyInfoInputs.cache
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.AssemblyInfo.cs
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.dll
+/Users/MikeG/workspace4class/practiceshit/c#/linqlist/obj/Debug/netcoreapp2.1/linqlist.pdb
