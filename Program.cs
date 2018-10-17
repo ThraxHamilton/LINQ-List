@@ -4,12 +4,13 @@ using System.Linq;
 
 namespace linqlist {
     class Program {
-        public class Customer
-{
-    public string Name { get; set; }
-    public double Balance { get; set; }
-    public string Bank { get; set; }
-}
+        // Build a collection of customers who are millionaires
+        public class Customer {
+            public string Name { get; set; }
+            public double Balance { get; set; }
+            public string Bank { get; set; }
+        }
+
         static void Main (string[] args) {
             // Find the words in the collection that start with the letter 'L'
             List<string> fruits = new List<string> () { "Lemon", "Apple", "Orange", "Lime", "Watermelon", "Loganberry" };
@@ -180,16 +181,32 @@ namespace linqlist {
                 14
             };
 
-            var squared = wheresSquaredo.TakeWhile(num => Math.Sqrt(num) % 1 !=0);
+            var squared = wheresSquaredo.TakeWhile (num => Math.Sqrt (num) % 1 != 0);
 
-            foreach(int num in squared){
-                Console.WriteLine(num);
+            foreach (int num in squared) {
+                // Console.WriteLine(num);
             }
+
+            List<Customer> customers = new List<Customer> () {
+                new Customer () { Name = "Bob Lesman", Balance = 80345.66, Bank = "FTB" },
+                new Customer () { Name = "Joe Landy", Balance = 9284756.21, Bank = "WF" },
+                new Customer () { Name = "Meg Ford", Balance = 487233.01, Bank = "BOA" },
+                new Customer () { Name = "Peg Vale", Balance = 7001449.92, Bank = "BOA" },
+                new Customer () { Name = "Mike Johnson", Balance = 790872.12, Bank = "WF" },
+                new Customer () { Name = "Les Paul", Balance = 8374892.54, Bank = "WF" },
+                new Customer () { Name = "Sid Crosby", Balance = 957436.39, Bank = "FTB" },
+                new Customer () { Name = "Sarah Ng", Balance = 56562389.85, Bank = "FTB" },
+                new Customer () { Name = "Tina Fey", Balance = 1000000.00, Bank = "CITI" },
+                new Customer () { Name = "Sid Brown", Balance = 49582.68, Bank = "CITI" }
+
+            };
+            var millionaires = customers.Where(num => num.Balance > 100000000);
+            foreach(Customer customer in millionaires){
+                // Console.WriteLine($"{customer.Name} has ${customer.Balance}");
+            }
+
             
-
-
             
-
         }
     }
 }
