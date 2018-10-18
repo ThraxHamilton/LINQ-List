@@ -200,13 +200,24 @@ namespace linqlist {
                 new Customer () { Name = "Sid Brown", Balance = 49582.68, Bank = "CITI" }
 
             };
-            var millionaires = customers.Where(num => num.Balance > 100000000);
-            foreach(Customer customer in millionaires){
-                // Console.WriteLine($"{customer.Name} has ${customer.Balance}");
+            var millionaires = customers.Where (num => num.Balance >= 1000000);
+            foreach (Customer customer in millionaires) {
+                Console.WriteLine ($"{customer.Name} has ${customer.Balance}");
             }
 
-            
-            
+            /*
+    Given the same customer set, display how many millionaires per bank.
+    Ref: https://stackoverflow.com/questions/7325278/group-by-in-linq
+
+    Example Output:
+    WF 2
+    BOA 1
+    FTB 1
+    CITI 1
+*/
+
+
+
         }
     }
 }
