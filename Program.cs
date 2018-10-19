@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace linqlist {
     class Program {
+        public class Bank{
+            public string Name {get; set;}
+            public string Symbol {get; set;}
+        }
         // Build a collection of customers who are millionaires
         public class Customer {
             public string Name { get; set; }
@@ -202,7 +206,7 @@ namespace linqlist {
             };
             var millionaires = customers.Where (num => num.Balance >= 1000000);
             foreach (Customer customer in millionaires) {
-                Console.WriteLine ($"{customer.Name} has ${customer.Balance}");
+                // Console.WriteLine ($"{customer.Name} has ${customer.Balance}");
             }
 
             /*
@@ -215,6 +219,38 @@ namespace linqlist {
     FTB 1
     CITI 1
 */
+
+        var perBank = from bank in customers
+        where bank.Balance >= 1000000
+        group bank by bank.Bank into BankList
+        select new {
+            ReportBank = BankList.Key,
+            MilPerBank = BankList.ToList().Count
+        };
+
+        foreach (var bank in perBank) {
+            // Console.WriteLine(bank);
+        }
+        
+           // Introduction to Joining Two Related Collections
+        // Create some banks and store in a List
+        List<Bank> banks = new List<Bank>() {
+            new Bank(){ Name="First Tennessee", Symbol="FTB"},
+            new Bank(){ Name="Wells Fargo", Symbol="WF"},
+            new Bank(){ Name="Bank of America", Symbol="BOA"},
+            new Bank(){ Name="Citibank", Symbol="CITI"},
+        };
+        List<Customer> millionaireReport = customers.Where(n => n.Balance >= 1_000_000).OrderBy(n => n.Name.Split(" ")[1]).Select(c => new Customer()
+        {
+            Name = c.Name,
+            Bank = banks.Find(BankId => BankId.Symbol == c.Bank).Name,
+            Balance = c.Balance
+
+        }).ToList();
+
+        foreach(Customer customer in millionaireReport){
+            Console.WriteLine($"{customer.Name} {customer.Bank}");
+        }
 
 
 
